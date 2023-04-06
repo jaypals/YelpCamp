@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card shadow mb-5">
+      <div class="card-body">
+        <h3 class="card-title text-center">New Campground</h3>
+        <form
+          action="/campgrounds"
+          method="POST"
+          novalidate
+          class="needs-validation"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              id="title"
+              name="campground[title]"
+              placeholder="Title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input
+              class="form-control"
+              type="text"
+              id="location"
+              name="campground[location]"
+              placeholder="Location"
+              required
+            />
+          </div>
+          <div class="col-auto mb-3">
+            <label class="form-label" for="price">Price</label>
+            <div class="input-group">
+              <div class="input-group-text">$</div>
+              <input
+                name="campground[price]"
+                type="text"
+                class="form-control"
+                id="price"
+                placeholder="0.00"
+                required
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea
+              class="form-control"
+              type="text"
+              id="description"
+              name="campground[description]"
+              placeholder="Description"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label"
+              >Upload Image</label
+            >
+            <input
+              class="form-control"
+              type="file"
+              id="formFileMultiple"
+              multiple
+              name="image"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-success">Add Campground</button>
+            <a href="/campgrounds" class="btn btn-success">All Campgrounds</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
